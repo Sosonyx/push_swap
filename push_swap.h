@@ -68,6 +68,7 @@ int				check_if_no_duplicate(t_node *lst);
 long long		ft_aatoi(const char *nptr);
 int				ft_isdigit(int c);
 void			print_index(t_node *lst);
-int	get_pos_in_sorted_list(t_node *lst, int value);
+int				get_pos_in_sorted_list(t_node *lst, int value);
+int				is_valid_number(char *str);
 
 #endif

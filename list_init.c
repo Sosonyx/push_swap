@@ -74,7 +74,9 @@ t_piles	*create_list(int ac, char **av)
 	first_b = NULL;
 	while (i < ac)
 	{
-		if (check_if_args_are_numbers(ac, av))
+		if (!check_if_args_are_numbers(ac, av))
+			return (printf("Error\n"), NULL);
+		else
 			nb = ft_aatoi(av[i]);
 		if (nb > 2147483647 || nb < -2147483648)
 			return (printf("Error\n"), lst_clear(&first_a), NULL);

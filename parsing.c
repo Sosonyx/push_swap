@@ -14,20 +14,13 @@
 
 int	check_if_args_are_numbers(int ac, char **av)
 {
-	int	j;
 	int	i;
 
 	i = 1;
-	j = 0;
 	while (i < ac)
 	{
-		j = 0;
-		while (av[i][j])
-		{
-			if (!ft_isdigit(av[i][j]))
-				return (0);
-			j++;
-		}
+		if (!is_valid_number(av[i]))
+			return (0);
 		i++;
 	}
 	return (1);

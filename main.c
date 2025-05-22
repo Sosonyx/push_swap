@@ -34,5 +34,5 @@ int	main(int ac, char **av)
 	sort_array(array, lst_size(list->pile_a));
 	print_array(array, lst_size(list->pile_a));
 	print_index(list->pile_a);
-	get_pos_in_sorted_list(list->pile_a, );
+	// get_pos_in_sorted_list(list->pile_a, );
 }
