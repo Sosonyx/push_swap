@@ -6,12 +6,11 @@
 /*   By: ihadj <ihadj@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 16:05:18 by ihadj             #+#    #+#             */
-/*   Updated: 2025/05/26 18:06:20 by ihadj            ###   ########.fr       */
+/*   Updated: 2025/06/03 18:10:02 by ihadj            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "printf/ft_printf.h"
 
 int	*set_array(t_node *lst_a, int size)
 {
@@ -25,7 +24,7 @@ int	*set_array(t_node *lst_a, int size)
 	tmp = lst_a;
 	array = malloc(sizeof(int) * size);
 	if (!array)
-		return (ft_printf("Echec malloc"), NULL);
+		return (NULL);
 	while (i < size)
 	{
 		array[i++] = tmp->content;

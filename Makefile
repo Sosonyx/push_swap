@@ -19,10 +19,8 @@ LIBFT_DIR   = libft
 
 # Compiler
 CC          = cc
-CFLAGS      = -Wall -Wextra -Werror -I$(INCLUDES_DIR) -I$(LIBFT_DIR)
+CFLAGS      = -Wall -Wextra -Werror -I$(INCLUDES_DIR)
 
-# Libraries
-LIBFT_A     = $(LIBFT_DIR)/libft.a
 
 SRC = $(SRCS_DIR)/main.c \
       $(SRCS_DIR)/utils/arg_checker.c \
@@ -42,24 +40,21 @@ SRC = $(SRCS_DIR)/main.c \
 
 OBJS = $(SRC:.c=.o)
 
-all: $(LIBFT_A) $(NAME)
+all: $(NAME)
 
-$(LIBFT_A):
-	make -C $(LIBFT_DIR)
 
-$(NAME): $(OBJS) $(LIBFT_A)
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME) $(LIBFT_A) $(LIBFT_DIR)/printf/libftprintf.a
+$(NAME): $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 %.o: %.c $(INCLUDES_DIR)/push_swap.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJS)
-	make -C $(LIBFT_DIR) clean
 
 fclean: clean
 	rm -f $(NAME)
-	make -C $(LIBFT_DIR) fclean
+
 
 re: fclean all
 

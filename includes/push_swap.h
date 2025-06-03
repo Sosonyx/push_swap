@@ -6,7 +6,7 @@
 /*   By: ihadj <ihadj@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 12:00:59 by ihadj             #+#    #+#             */
-/*   Updated: 2025/05/26 17:45:25 by ihadj            ###   ########.fr       */
+/*   Updated: 2025/06/03 17:49:57 by ihadj            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 # include "sorting.h"
 
 // Dépendances externes
-# include "libft.h"
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdio.h>

@@ -6,12 +6,11 @@
 /*   By: ihadj <ihadj@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 18:21:18 by ihadj             #+#    #+#             */
-/*   Updated: 2025/06/03 15:45:43 by ihadj            ###   ########.fr       */
+/*   Updated: 2025/06/03 18:10:09 by ihadj            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "printf/ft_printf.h"
 
 t_node	*new_node(int content)
 {
@@ -74,18 +73,3 @@ t_piles	*create_list(int ac, char **av)
 	return (piles);
 }
 
-void	print_list(t_node *lst)
-{
-	t_node	*tmp;
-
-	tmp = lst;
-	if (!lst)
-		return ;
-	ft_printf("[Val] ------- [index]\n");
-	while (tmp)
-	{
-		ft_printf("%d <------>", tmp->content);
-		ft_printf(" %d\n", tmp->sorted_index);
-		tmp = tmp->next;
-	}
-}

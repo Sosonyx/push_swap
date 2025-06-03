@@ -6,12 +6,11 @@
 /*   By: ihadj <ihadj@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 17:03:31 by ihadj             #+#    #+#             */
-/*   Updated: 2025/06/03 16:35:18 by ihadj            ###   ########.fr       */
+/*   Updated: 2025/06/03 18:09:45 by ihadj            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "printf/ft_printf.h"
 
 int	check_if_no_duplicate(t_node *lst)
 {
@@ -75,4 +74,8 @@ int	check_if_args_are_numbers(int ac, char **av)
 		i++;
 	}
 	return (1);
+}
+void	ft_putchar_fd(char c, int fd)
+{
+	write(fd, &c, 1);
 }

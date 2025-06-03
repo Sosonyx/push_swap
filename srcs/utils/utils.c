@@ -6,7 +6,7 @@
 /*   By: ihadj <ihadj@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 15:58:26 by ihadj             #+#    #+#             */
-/*   Updated: 2025/05/26 18:05:07 by ihadj            ###   ########.fr       */
+/*   Updated: 2025/06/03 18:08:02 by ihadj            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,4 +72,12 @@ void	lst_clear(t_node **lst)
 		(*lst) = tmp;
 	}
 	*lst = NULL;
+}
+void	ft_putstr_fd(char *s, int fd)
+{
+	int	i;
+
+	i = 0;
+	while (s[i])
+		ft_putchar_fd(s[i++], fd);
 }
