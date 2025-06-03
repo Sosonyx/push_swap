@@ -1,90 +1,94 @@
-# PUSHSWAP
 push_swap
-Projet 42 – trier une pile d’entiers avec un nombre minimal d’opérations sur des listes chaînées.
+Projet 42 – trier une pile d’entiers avec un nombre minimal d’instructions.
 Objectif
 
-Reproduire un algorithme de tri en utilisant uniquement une série d’instructions définies (swap, push, rotate, reverse rotate) appliquées à deux piles (lst_a et lst_b), avec un nombre minimal d’opérations.
-
-Le but est d’apprendre à manipuler les listes chaînées, gérer la mémoire, et optimiser un algorithme de tri.
+Écrire un programme qui trie une liste d’entiers en utilisant uniquement un nombre limité d’instructions prédéfinies (push, swap, rotate, reverse rotate) sur deux piles, tout en optimisant le nombre total d’opérations effectuées.
 Fonctions principales
 
-<<<<<<< HEAD
-    sort_3(t_node **lst_a) : trie 3 éléments dans la pile A de manière optimale.
+    **main(int argc, char argv) :
 
-    push_two_largest_to_b(t_node **lst_a, t_node **lst_b) : pousse les deux plus grands éléments de A vers B.
+        Fait le parsing des arguments (vérification, conversion, détection d’erreurs) et initialise la pile principale.
 
-    sort_5(t_node **lst_a, t_node **lst_b) : trie 5 éléments en combinant les deux fonctions précédentes.
+        Lance l’algorithme de tri.
 
-    Gestion des instructions (swap, push, rotate, reverse rotate) adaptées aux piles.
-=======
-    Parsing des éléments :
-    Le programme commence par parser les arguments passés en ligne de commande, vérifie qu’ils sont des entiers valides sans doublons, puis crée une liste chaînée représentant la pile A (lst_a). Chaque élément reçoit un sorted_index qui facilite les comparaisons et le tri.
+    **parse_args(int argc, char **argv, t_node lst_a) :
 
-    Algorithme principal (sort) :
-    Le tri s’effectue via deux piles (lst_a et lst_b) et un ensemble d’instructions limitées (swap, push, rotate, reverse rotate).
+        Analyse les arguments passés en ligne de commande, vérifie leur validité (uniques, numériques), et remplit la pile lst_a.
 
-        Pour les petites listes (3 à 5 éléments), des fonctions spécifiques (sort_3, sort_5) appliquent un tri optimal avec un minimum d’opérations.
+    **sort_3(t_node lst_a) :
 
-        Pour les listes plus grandes, l’algorithme divise la pile en chunks et pousse progressivement les éléments de lst_a vers lst_b selon leur ordre, avant de les réintégrer triés dans lst_a.
+        Trie une pile de 3 éléments de manière optimale avec un minimum d’instructions.
 
-    Instructions et opérations :
-    Implémentation des opérations (sa, sb, ss, pa, pb, ra, rb, rr, rra, rrb, rrr) qui manipulent les piles pour atteindre l’ordre trié. Chaque opération est choisie stratégiquement selon la position des éléments pour minimiser le nombre total d’actions.
+    **push_two_largest_to_b(t_node **lst_a, t_node lst_b) :
 
-    Gestion mémoire et robustesse :
-    Manipulation des listes chaînées avec une allocation dynamique soignée, prévention des fuites mémoire, et validation stricte des données pour assurer la stabilité et la sécurité du programme.
->>>>>>> 33e140400c5500008da7f994e6bb47abd2cf2cf7
+        Sélectionne et pousse les deux plus grands éléments de la pile a vers la pile b.
+
+    **sort_5(t_node **lst_a, t_node lst_b) :
+
+        Combine push_two_largest_to_b et sort_3 pour trier jusqu’à 5 éléments efficacement.
+
+    **algo(t_node **lst_a, t_node lst_b) :
+
+        Algorithme principal qui, selon la taille de la pile, applique la méthode adaptée (ex: tri par chunks pour les grandes piles).
+
+        Gère la logique globale du tri en combinant les différentes fonctions d’instruction et de gestion.
+
+Raisonnement et Algorithme
+
+    Le programme reçoit en entrée une liste d’entiers à trier.
+
+    Il parse les arguments et stocke les éléments dans une pile a (liste chaînée).
+
+    Pour les petites listes (3 à 5 éléments), on utilise des fonctions spécifiques (sort_3, sort_5) avec des séquences d’instructions optimisées.
+
+    Pour les listes plus grandes, on découpe le tri en plusieurs phases :
+
+        Indexation : chaque élément reçoit un sorted_index correspondant à sa position triée.
+
+        Tri par chunks : on divise la pile en segments ("chunks") pour déplacer progressivement les éléments de a vers b dans l’ordre partiel.
+
+        On pousse puis on récupère les éléments entre a et b en utilisant les instructions push, rotate, swap pour minimiser les déplacements.
+
+    L’algorithme vise à limiter le nombre d’opérations en exploitant la position des éléments dans la pile, les coûts de déplacement, et en choisissant la meilleure opération à chaque étape.
+
+Parsing des éléments
+
+    Les arguments sont analysés pour :
+
+        S’assurer qu’ils représentent des entiers valides (pas de caractères invalides).
+
+        Vérifier qu’aucun doublon n’existe.
+
+        Convertir les strings en entiers et les stocker dans une structure t_node (liste chaînée).
+
+    En cas d’erreur, le programme affiche un message et termine proprement.
 
 Fichiers
 
-    srcs/ – fichiers sources .c
+    srcs/ – Code source du programme :
 
-    includes/ – fichiers .h
+        Tri, instructions, parsing, utils, etc.
 
-    libft/ – bibliothèque externe utilisée (si présente)
+    includes/ – Headers (push_swap.h), déclarations et prototypes.
 
-    Makefile – automatisation de la compilation
+    Makefile – Automatisation de la compilation, incluant compilation, nettoyage, etc.
 
-    main.c – point d’entrée (optionnel, fichier de test)
+    main.c – Point d’entrée, gestion du parsing et appel à l’algorithme principal.
 
 Connaissances acquises
 
-    Manipulation avancée des listes chaînées en C.
+    Manipulation de listes chaînées (piles).
 
-    Gestion dynamique de la mémoire sans fuite (valgrind).
+    Programmation modulaire (fonctions séparées dans plusieurs fichiers).
 
-<<<<<<< HEAD
-    Optimisation d’algorithmes de tri.
+    Gestion dynamique de la mémoire (malloc/free).
 
-    Gestion de plusieurs piles et opérations entre elles.
-=======
-    Optimisation d’algorithmes de tri sous contraintes.
+    Lecture et parsing des arguments en ligne de commande.
 
-    Gestion de piles et opérations entre elles.
->>>>>>> 33e140400c5500008da7f994e6bb47abd2cf2cf7
+    Utilisation d’un Makefile pour gérer la compilation et le linking.
 
-    Création d’un Makefile robuste et modulable.
+    Approche algorithmique d’optimisation (réduction du nombre d’instructions).
 
-    Respect strict des normes de codage 42.
+    Compréhension fine des opérations sur piles (push, swap, rotate, reverse rotate).
 
-    Découpage clair et structuré du code en fonctions spécifiques.
-
-Compilation et utilisation
-
-make
-./push_swap [liste d’entiers]
-
-Notes
-
-<<<<<<< HEAD
-    Le projet supporte le tri de petites listes (3 à 5 éléments) avec fonctions dédiées, extensible à plus grand nombre.
-
-    Chaque opération est imprimée pour suivre les actions effectuées.
-
-    L’approche permet d’étudier les bases d’un tri optimisé avec contraintes.
-=======
-    Le projet supporte le tri de petites listes (3 à 5 éléments) avec fonctions dédiées, extensible à des listes plus grandes.
-
-    Chaque opération est imprimée pour suivre les actions effectuées.
-
-    L’approche permet d’étudier les bases d’un tri optimisé avec contraintes spécifiques.
->>>>>>> 33e140400c5500008da7f994e6bb47abd2cf2cf7
+    Gestion d’erreurs et validation d’entrée.
