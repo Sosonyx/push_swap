@@ -1,94 +1,45 @@
-push_swap
-Projet 42 – trier une pile d’entiers avec un nombre minimal d’instructions.
-Objectif
+# push_swap
 
-Écrire un programme qui trie une liste d’entiers en utilisant uniquement un nombre limité d’instructions prédéfinies (push, swap, rotate, reverse rotate) sur deux piles, tout en optimisant le nombre total d’opérations effectuées.
-Fonctions principales
+Projet 42 – trier une pile d’entiers en utilisant un nombre minimal d’instructions sur deux piles.
 
-    **main(int argc, char argv) :
+---
 
-        Fait le parsing des arguments (vérification, conversion, détection d’erreurs) et initialise la pile principale.
+## Objectif
 
-        Lance l’algorithme de tri.
+Écrire un programme qui trie une liste d’entiers passée en argument, en utilisant uniquement les instructions `push`, `swap`, `rotate` et `reverse rotate` sur deux piles, tout en optimisant le nombre total d’opérations réalisées.
 
-    **parse_args(int argc, char **argv, t_node lst_a) :
+---
 
-        Analyse les arguments passés en ligne de commande, vérifie leur validité (uniques, numériques), et remplit la pile lst_a.
+## Fonctions principales
 
-    **sort_3(t_node lst_a) :
+- `main(int argc, char **argv)` : parse les arguments, initialise la pile principale et lance l’algorithme de tri.  
+- Parsing sécurisé et validation des arguments (entiers valides, pas de doublons).  
+- `algo(t_node **lst_a, t_node **lst_b)` : fonction principale qui applique une stratégie gloutonne (greedy) pour trier la pile.  
+- Fonctions spécifiques de tri :  
+  - `sort_3(t_node **lst_a)` pour trier efficacement 3 éléments.  
+  - `sort_5(t_node **lst_a, t_node **lst_b)` pour trier jusqu’à 5 éléments.  
+- Gestion des instructions : `sa`, `sb`, `pa`, `pb`, `ra`, `rb`, `rra`, `rrb` implémentées pour manipuler les piles.  
+- Algorithme glouton qui sélectionne à chaque étape l’élément dont le coût total de déplacement est minimal (coût calculé selon sa position dans les piles), et effectue les opérations optimales pour le replacer.
 
-        Trie une pile de 3 éléments de manière optimale avec un minimum d’instructions.
+---
 
-    **push_two_largest_to_b(t_node **lst_a, t_node lst_b) :
+## Fichiers
 
-        Sélectionne et pousse les deux plus grands éléments de la pile a vers la pile b.
+- `srcs/` – code source : tri, instructions, parsing, utilitaires  
+- `includes/` – fichier(s) header (`push_swap.h`) avec prototypes et structures  
+- `Makefile` – automatisation de la compilation  
+- `main.c` – point d’entrée et gestion du parsing  
 
-    **sort_5(t_node **lst_a, t_node lst_b) :
+---
 
-        Combine push_two_largest_to_b et sort_3 pour trier jusqu’à 5 éléments efficacement.
+## Connaissances acquises
 
-    **algo(t_node **lst_a, t_node lst_b) :
-
-        Algorithme principal qui, selon la taille de la pile, applique la méthode adaptée (ex: tri par chunks pour les grandes piles).
-
-        Gère la logique globale du tri en combinant les différentes fonctions d’instruction et de gestion.
-
-Raisonnement et Algorithme
-
-    Le programme reçoit en entrée une liste d’entiers à trier.
-
-    Il parse les arguments et stocke les éléments dans une pile a (liste chaînée).
-
-    Pour les petites listes (3 à 5 éléments), on utilise des fonctions spécifiques (sort_3, sort_5) avec des séquences d’instructions optimisées.
-
-    Pour les listes plus grandes, on découpe le tri en plusieurs phases :
-
-        Indexation : chaque élément reçoit un sorted_index correspondant à sa position triée.
-
-        Tri par chunks : on divise la pile en segments ("chunks") pour déplacer progressivement les éléments de a vers b dans l’ordre partiel.
-
-        On pousse puis on récupère les éléments entre a et b en utilisant les instructions push, rotate, swap pour minimiser les déplacements.
-
-    L’algorithme vise à limiter le nombre d’opérations en exploitant la position des éléments dans la pile, les coûts de déplacement, et en choisissant la meilleure opération à chaque étape.
-
-Parsing des éléments
-
-    Les arguments sont analysés pour :
-
-        S’assurer qu’ils représentent des entiers valides (pas de caractères invalides).
-
-        Vérifier qu’aucun doublon n’existe.
-
-        Convertir les strings en entiers et les stocker dans une structure t_node (liste chaînée).
-
-    En cas d’erreur, le programme affiche un message et termine proprement.
-
-Fichiers
-
-    srcs/ – Code source du programme :
-
-        Tri, instructions, parsing, utils, etc.
-
-    includes/ – Headers (push_swap.h), déclarations et prototypes.
-
-    Makefile – Automatisation de la compilation, incluant compilation, nettoyage, etc.
-
-    main.c – Point d’entrée, gestion du parsing et appel à l’algorithme principal.
-
-Connaissances acquises
-
-    Manipulation de listes chaînées (piles).
-
-    Programmation modulaire (fonctions séparées dans plusieurs fichiers).
-
-    Gestion dynamique de la mémoire (malloc/free).
-
-    Lecture et parsing des arguments en ligne de commande.
-
-    Utilisation d’un Makefile pour gérer la compilation et le linking.
-
-    Approche algorithmique d’optimisation (réduction du nombre d’instructions).
-
-    Compréhension fine des opérations sur piles (push, swap, rotate, reverse rotate).
-
-    Gestion d’erreurs et validation d’entrée.
+- Manipulation de listes chaînées (piles) et gestion dynamique mémoire.  
+- Parsing d’arguments en ligne de commande avec validation.  
+- Programmation modulaire avec séparation du code en plusieurs fichiers `.c`.  
+- Conception et implémentation d’un algorithme glouton optimisé pour réduire le nombre d’instructions.  
+- Gestion des opérations bas niveau sur piles (push, swap, rotate, reverse rotate).  
+- Calcul des coûts pour optimiser les déplacements dans les piles.  
+- Utilisation d’un Makefile pour gérer compilation et linking.  
+- Respect strict des normes 42.  
+- Approche algorithmique claire avec découpage fonctionnel.  
