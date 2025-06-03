@@ -6,7 +6,7 @@
 /*   By: ihadj <ihadj@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 17:03:31 by ihadj             #+#    #+#             */
-/*   Updated: 2025/06/03 18:09:45 by ihadj            ###   ########.fr       */
+/*   Updated: 2025/06/03 19:00:57 by ihadj            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,7 @@ int	check_if_args_are_numbers(int ac, char **av)
 	}
 	return (1);
 }
+
 void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);

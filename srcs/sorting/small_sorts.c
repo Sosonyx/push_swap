@@ -1,20 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   chunk_sort.c                                       :+:      :+:    :+:   */
+/*   small_sorts.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ihadj <ihadj@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 17:09:27 by ihadj             #+#    #+#             */
-/*   Updated: 2025/06/03 18:10:48 by ihadj            ###   ########.fr       */
+/*   Updated: 2025/06/03 18:58:02 by ihadj            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+void	pick_sort(t_piles *piles, t_node *lst_a, int size)
+{	
+	if (size == 1)
+		return ;
+	else if (size == 2)
+	{
+		if (lst_a->content > lst_a->next->content)
+		{
+			sa(&piles->pile_a);
+			return ;
+		}
+		else
+			return ;
+	}
+	else if (size == 3)
+		sort_3(&piles->pile_a);
+	else if (size == 5)
+		sort_5(&piles->pile_a, &piles->pile_b);
+	else
+		sort_algo(piles, size);
+}
+
 void	sort_3(t_node **lst_a)
 {
-	t_node *el_a;
+	t_node	*el_a;
 
 	if (!lst_a || !*lst_a || !(*lst_a)->next || !(*lst_a)->next->next)
 		return ;
@@ -45,6 +67,7 @@ void	sort_3(t_node **lst_a)
 			rra(lst_a);
 	}
 }
+
 void	push_two_largest_to_b(t_node **lst_a, t_node **lst_b)
 {
 	t_node	*max;
@@ -68,38 +91,25 @@ void	push_two_largest_to_b(t_node **lst_a, t_node **lst_b)
 	}
 }
 
-
-void	sort_5(t_node **lst_a, t_node **lst_b)
+void	sort_5(t_node **lst_a, t_node **l_b)
 {
 	int	i;
 
 	i = 0;
-	if (!lst_a || !*lst_a || !lst_b)
-		return;
-	push_two_largest_to_b(lst_a, lst_b);
+	if (!lst_a || !*lst_a || !l_b)
+		return ;
+	push_two_largest_to_b(lst_a, l_b);
 	a_index(*lst_a);
 	sort_3(lst_a);
 	while (i < 2)
 	{
-		if ((*lst_b)->next && (*lst_b)->sorted_index < (*lst_b)->next->sorted_index)
-			sb(lst_b);
-		pa(lst_a, lst_b);
+		if ((*l_b)->next && (*l_b)->sorted_index < (*l_b)->next->sorted_index)
+			sb(l_b);
+		pa(lst_a, l_b);
 		a_index(*lst_a);
-		a_index(*lst_b);
+		a_index(*l_b);
 		i++;
 	}
 	a_index(*lst_a);
-	a_index(*lst_b);
-}
-int is_sorted(t_node *lst)
-{
-    if (!lst)
-        return (1);
-    while (lst->next)
-    {
-        if (lst->sorted_index > lst->next->sorted_index)
-            return (0);
-        lst = lst->next;
-    }
-    return (1);
+	a_index(*l_b);
 }

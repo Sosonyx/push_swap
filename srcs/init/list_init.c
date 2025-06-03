@@ -6,7 +6,7 @@
 /*   By: ihadj <ihadj@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 18:21:18 by ihadj             #+#    #+#             */
-/*   Updated: 2025/06/03 18:10:09 by ihadj            ###   ########.fr       */
+/*   Updated: 2025/06/03 18:26:10 by ihadj            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,4 +72,3 @@ t_piles	*create_list(int ac, char **av)
 	piles->pile_b = first_b;
 	return (piles);
 }
-

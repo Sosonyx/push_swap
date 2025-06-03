@@ -24,9 +24,11 @@ CFLAGS      = -Wall -Wextra -Werror -I$(INCLUDES_DIR)
 
 SRC = $(SRCS_DIR)/main.c \
       $(SRCS_DIR)/utils/arg_checker.c \
-      $(SRCS_DIR)/utils/utils.c \
+      $(SRCS_DIR)/utils/list_utils.c \
+      $(SRCS_DIR)/utils/maths_utils.c \
       $(SRCS_DIR)/utils/index_gestion.c \
-      $(SRCS_DIR)/utils/array.c \
+      $(SRCS_DIR)/utils/costs_gestion.c \
+      $(SRCS_DIR)/init/array.c \
       $(SRCS_DIR)/init/list_init.c \
       $(SRCS_DIR)/instructions/instructions_utils.c \
       $(SRCS_DIR)/instructions/push_instructions.c \
@@ -35,7 +37,9 @@ SRC = $(SRCS_DIR)/main.c \
       $(SRCS_DIR)/instructions/rotate_instructions3.c \
       $(SRCS_DIR)/instructions/swap_instructions.c \
       $(SRCS_DIR)/sorting/solver_utils.c \
-      $(SRCS_DIR)/sorting/chunk_sort.c \
+      $(SRCS_DIR)/sorting/small_sorts.c \
+      $(SRCS_DIR)/sorting/perform_rotates.c \
+      $(SRCS_DIR)/sorting/cases.c \
       $(SRCS_DIR)/sorting/algo.c
 
 OBJS = $(SRC:.c=.o)
