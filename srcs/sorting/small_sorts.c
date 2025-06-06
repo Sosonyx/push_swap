@@ -6,7 +6,7 @@
 /*   By: ihadj <ihadj@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 17:09:27 by ihadj             #+#    #+#             */
-/*   Updated: 2025/06/03 18:58:02 by ihadj            ###   ########.fr       */
+/*   Updated: 2025/06/06 16:58:30 by ihadj            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,32 @@ void	pick_sort(t_piles *piles, t_node *lst_a, int size)
 		sort_algo(piles, size);
 }
 
+void	sort_3_rotates(t_node **lst_a, t_node **el_a)
+{
+	if ((*el_a)->sorted_index > (*el_a)->next->sorted_index)
+	{
+		if ((*el_a)->next->sorted_index > (*el_a)->next->next->sorted_index)
+		{
+			sa(lst_a);
+			rra(lst_a);
+		}
+		else if ((*el_a)->sorted_index > (*el_a)->next->next->sorted_index)
+			ra(lst_a);
+		else
+			sa(lst_a);
+	}
+	else
+	{
+		if ((*el_a)->sorted_index < (*el_a)->next->next->sorted_index)
+		{
+			sa(lst_a);
+			ra(lst_a);
+		}
+		else
+			rra(lst_a);
+	}
+}
+
 void	sort_3(t_node **lst_a)
 {
 	t_node	*el_a;
@@ -44,28 +70,7 @@ void	sort_3(t_node **lst_a)
 	if (el_a->sorted_index < el_a->next->sorted_index
 		&& el_a->next->sorted_index < el_a->next->next->sorted_index)
 		return ;
-	if (el_a->sorted_index > el_a->next->sorted_index)
-	{
-		if (el_a->next->sorted_index > el_a->next->next->sorted_index)
-		{
-			sa(lst_a);
-			rra(lst_a);
-		}
-		else if (el_a->sorted_index > el_a->next->next->sorted_index)
-			ra(lst_a);
-		else
-			sa(lst_a);
-	}
-	else
-	{
-		if (el_a->sorted_index < el_a->next->next->sorted_index)
-		{
-			sa(lst_a);
-			ra(lst_a);
-		}
-		else
-			rra(lst_a);
-	}
+	sort_3_rotates(lst_a, &el_a);
 }
 
 void	push_two_largest_to_b(t_node **lst_a, t_node **lst_b)

@@ -6,7 +6,7 @@
 /*   By: ihadj <ihadj@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 17:06:57 by ihadj             #+#    #+#             */
-/*   Updated: 2025/06/01 17:32:48 by ihadj            ###   ########.fr       */
+/*   Updated: 2025/06/06 15:23:10 by ihadj            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,21 +20,7 @@ int	get_pos_in_sorted_array(int *sorted, int size, int value)
 	while (i < size)
 	{
 		if (value == sorted[i])
-			return (i);
-		i++;
-	}
-	return (-1);
-}
-
-int	get_pos_in_list(t_node *lst, int size, int value)
-{
-	int		i;
-
-	i = 0;
-	while (i < size)
-	{
-		if (value == lst->content)
-			return (i);
+			return (i + 1);
 		i++;
 	}
 	return (-1);

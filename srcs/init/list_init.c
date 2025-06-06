@@ -6,7 +6,7 @@
 /*   By: ihadj <ihadj@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 18:21:18 by ihadj             #+#    #+#             */
-/*   Updated: 2025/06/03 18:26:10 by ihadj            ###   ########.fr       */
+/*   Updated: 2025/06/06 13:30:23 by ihadj            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ t_node	*new_node(int content)
 		return (NULL);
 	node->content = content;
 	node->actual_index = i++;
-	node->sorted_index = 0;
+	node->sorted_index = 1;
 	node->next = NULL;
 	return (node);
 }

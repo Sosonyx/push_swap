@@ -6,7 +6,7 @@
 /*   By: ihadj <ihadj@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 14:12:22 by ihadj             #+#    #+#             */
-/*   Updated: 2025/06/03 16:30:33 by ihadj            ###   ########.fr       */
+/*   Updated: 2025/06/06 16:45:46 by ihadj            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	main(int ac, char **av)
 
 	list = NULL;
 	if (ac < 2)
-		return (ft_putstr_fd("Error\n", 2), 1);
+		return (0);
 	list = create_list(ac, av);
 	if (!list)
 		return (1);

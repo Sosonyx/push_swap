@@ -6,13 +6,13 @@
 /*   By: ihadj <ihadj@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 18:29:05 by ihadj             #+#    #+#             */
-/*   Updated: 2025/06/03 18:59:50 by ihadj            ###   ########.fr       */
+/*   Updated: 2025/06/06 17:01:45 by ihadj            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	best_case(t_piles *p, t_node *el_a)
+int	best_case(t_piles *p, t_node *el_a, int cost_a, int cost_b)
 {
 	int		c1;
 	int		c2;

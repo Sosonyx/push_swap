@@ -6,7 +6,7 @@
 /*   By: ihadj <ihadj@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 18:31:08 by ihadj             #+#    #+#             */
-/*   Updated: 2025/06/03 19:00:48 by ihadj            ###   ########.fr       */
+/*   Updated: 2025/06/06 16:43:07 by ihadj            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 
 void	rotate_case_1(t_piles *p, int rot_a, int rot_b)
 {
+	if (rot_a < 0)
+		rot_a += lst_size(p->pile_a);
+	if (rot_b < 0)
+		rot_b += lst_size(p->pile_b);
 	while (rot_a > 0 && rot_b > 0)
 	{
 		rr(p);

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ihadj <ihadj@student.42.fr>                +#+  +:+       +#+        #
+#    By: ihadj <ihadj@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/05/20 12:06:39 by ihadj             #+#    #+#              #
-#    Updated: 2025/05/26 18:45:00 by ihadj            ###   ########.fr        #
+#    Created: 2025/06/06 15:42:25 by ihadj             #+#    #+#              #
+#    Updated: 2025/06/06 16:16:08 by ihadj            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,12 @@ LIBFT_DIR   = libft
 
 # Compiler
 CC          = cc
-CFLAGS      = -Wall -Wextra -Werror -I$(INCLUDES_DIR)
+CFLAGS      = -Wall -Wextra -Werror -I$(INCLUDES_DIR) -I$(LIBFT_DIR)
+
+# Libraries
+LIBFT_A     = $(LIBFT_DIR)/libft.a
+PRINTF_DIR = libft/printf
+PRINTF_A = $(PRINTF_DIR)/libftprintf.a
 
 
 SRC = $(SRCS_DIR)/main.c \
@@ -44,21 +49,28 @@ SRC = $(SRCS_DIR)/main.c \
 
 OBJS = $(SRC:.c=.o)
 
-all: $(NAME)
+all: $(LIBFT_A) $(NAME)
 
+$(LIBFT_A):
+	make -C $(LIBFT_DIR)
 
-$(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+$(NAME): $(OBJS) $(LIBFT_A)
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME) $(LIBFT_A)
+
 
 %.o: %.c $(INCLUDES_DIR)/push_swap.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
+$(PRINTF_A):
+	make -C $(PRINTF_DIR)
+
 clean:
 	rm -f $(OBJS)
+	make -C $(LIBFT_DIR) clean
 
 fclean: clean
 	rm -f $(NAME)
-
+	make -C $(LIBFT_DIR) fclean
 
 re: fclean all
 
