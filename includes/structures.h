@@ -6,7 +6,7 @@
 /*   By: ihadj <ihadj@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 17:35:50 by ihadj             #+#    #+#             */
-/*   Updated: 2025/06/06 15:37:05 by ihadj            ###   ########.fr       */
+/*   Updated: 2025/06/06 17:05:04 by ihadj            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,11 @@ typedef struct s_piles
 	t_node	*pile_a;
 	t_node	*pile_b;
 }	t_piles;
+
+typedef struct s_costs
+{
+	int	cost_a;
+	int	cost_b;
+}	t_costs;
 
 #endif
