@@ -6,7 +6,7 @@
 /*   By: ihadj <ihadj@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 18:31:08 by ihadj             #+#    #+#             */
-/*   Updated: 2025/06/06 16:43:07 by ihadj            ###   ########.fr       */
+/*   Updated: 2025/06/07 14:38:51 by ihadj            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,9 @@ void	perform_rotation(t_piles *p, t_node *el_a, t_node *target)
 {
 	int	rot_a;
 	int	rot_b;
-	int	c1, c2, c3;
+	int	c1;
+	int	c2;
+	int	c3;
 
 	if (!target)
 		return ;

@@ -6,7 +6,7 @@
 /*   By: ihadj <ihadj@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 17:38:29 by ihadj             #+#    #+#             */
-/*   Updated: 2025/06/06 16:23:01 by ihadj            ###   ########.fr       */
+/*   Updated: 2025/06/07 14:55:10 by ihadj            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	push_to_b(t_piles *piles, t_node *element_a, int size);
 int		short_way(int actual_index, int sorted_index, int size);
 
 void	sort_3(t_node **lst_a);
-void		sort_3_rotates(t_node **lst_a, t_node **el_a);
+void	sort_3_rotates(t_node **lst_a, t_node **el_a);
 
 void	sort_5(t_node **lst_a, t_node **lst_b);
 void	push_two_largest_to_b(t_node **lst_a, t_node **lst_b);
@@ -36,7 +36,8 @@ void	push_to_a(t_piles *piles);
 int		determine_rotation(int actual_index, int size);
 
 void	sort_algo(t_piles *p, int size);
-
 int		is_sorted(t_node *lst);
+
+void	calc_costs(t_piles *p, t_node *el_a, t_node *tgt, t_costs *costs);
 
 #endif
