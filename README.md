@@ -9,7 +9,24 @@ Projet 42 – trier une pile d’entiers en utilisant un nombre minimal d’inst
 Écrire un programme qui trie une liste d’entiers passée en argument, en utilisant uniquement les instructions `push`, `swap`, `rotate` et `reverse rotate` sur deux piles, tout en optimisant le nombre total d’opérations réalisées.
 
 ---
+Comment utiliser
 
+    Compiler le programme :
+    make
+
+    Exécuter push_swap :
+    ./push_swap 3 2 1 6 5
+    Affiche la liste d’instructions pour trier la pile.
+
+    Utiliser le checker pour valider les instructions générées :
+
+        Compiler le checker (souvent checker est un programme séparé).
+
+        Passer la liste d’entiers au checker en entrée, et les instructions via un pipe, par exemple :
+
+./push_swap 3 2 1 6 5 | ./checker 3 2 1 6 5
+
+Le checker vérifie si les instructions triées la pile correctement et affiche OK ou KO.
 ## Fonctions principales
 
 - `main(int argc, char **argv)` : parse les arguments, initialise la pile principale et lance l’algorithme de tri.  
@@ -42,4 +59,18 @@ Projet 42 – trier une pile d’entiers en utilisant un nombre minimal d’inst
 - Calcul des coûts pour optimiser les déplacements dans les piles.  
 - Utilisation d’un Makefile pour gérer compilation et linking.  
 - Respect strict des normes 42.  
-- Approche algorithmique claire avec découpage fonctionnel.  
+- Approche algorithmique claire avec découpage fonctionnel.
+
+## Checker
+
+Le programme est testé avec un checker qui :
+
+    Reçoit en entrée la liste des instructions générées par push_swap.
+
+    Applique ces instructions sur la pile initiale.
+
+    Vérifie si la pile est triée à la fin.
+
+    Détecte les erreurs d’instruction ou les états invalides.
+
+Ce checker permet de valider que le programme fonctionne correctement et produit un tri valide.
