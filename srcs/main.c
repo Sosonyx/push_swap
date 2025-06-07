@@ -6,11 +6,11 @@
 /*   By: ihadj <ihadj@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 14:12:22 by ihadj             #+#    #+#             */
-/*   Updated: 2025/06/06 16:45:46 by ihadj            ###   ########.fr       */
+/*   Updated: 2025/06/07 15:37:59 by ihadj            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 int	main(int ac, char **av)
 {
