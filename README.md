@@ -3,6 +3,20 @@
 Projet 42 – trier une pile d’entiers en utilisant un nombre minimal d’instructions sur deux piles.
 
 ---
+# push_swap
+
+Projet 42 – trier une pile d’entiers en utilisant un nombre minimal d’instructions sur deux piles.
+
+---
+
+## Comment utiliser
+
+- **Compiler** le programme :  
+  ```bash
+  make
+      ./push_swap 3 2 1 6 5
+  make bonus
+      ./push_swap 3 2 1 6 5 | ./checker 3 2 1 6 5
 
 ## Objectif
 
@@ -10,6 +24,7 @@ Projet 42 – trier une pile d’entiers en utilisant un nombre minimal d’inst
 
 ---
 
+Le checker vérifie si les instructions triées la pile correctement et affiche OK ou KO.
 ## Fonctions principales
 
 - `main(int argc, char **argv)` : parse les arguments, initialise la pile principale et lance l’algorithme de tri.  
@@ -23,12 +38,7 @@ Projet 42 – trier une pile d’entiers en utilisant un nombre minimal d’inst
 
 ---
 
-## Fichiers
 
-- `srcs/` – code source : tri, instructions, parsing, utilitaires  
-- `includes/` – fichier(s) header (`push_swap.h`) avec prototypes et structures  
-- `Makefile` – automatisation de la compilation  
-- `main.c` – point d’entrée et gestion du parsing  
 
 ---
 
@@ -42,4 +52,4 @@ Projet 42 – trier une pile d’entiers en utilisant un nombre minimal d’inst
 - Calcul des coûts pour optimiser les déplacements dans les piles.  
 - Utilisation d’un Makefile pour gérer compilation et linking.  
 - Respect strict des normes 42.  
-- Approche algorithmique claire avec découpage fonctionnel.  
+- Approche algorithmique claire avec découpage fonctionnel.
