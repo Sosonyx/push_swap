@@ -6,7 +6,7 @@
 /*   By: ihadj <ihadj@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 18:21:18 by ihadj             #+#    #+#             */
-/*   Updated: 2025/06/06 13:30:23 by ihadj            ###   ########.fr       */
+/*   Updated: 2025/06/09 15:05:23 by ihadj            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,29 +46,29 @@ void	add_back(t_node **lst, t_node *new)
 
 t_piles	*create_list(int ac, char **av)
 {
-	t_piles		*piles;
-	t_node		*first_a;
-	t_node		*first_b;
+	t_piles		*p;
+	t_node		*a;
+	t_node		*b;
 	int			i;
 	long long	nb;
 
 	i = 1;
-	piles = malloc(sizeof(t_piles));
-	if (!piles)
+	p = malloc(sizeof(t_piles));
+	if (!p)
 		return (NULL);
-	first_a = NULL;
-	first_b = NULL;
+	a = NULL;
+	b = NULL;
 	while (i < ac)
 	{
 		if (!check_if_args_are_numbers(ac, av))
-			return (ft_putstr_fd("Error\n", 2), lst_clear(&first_a), NULL);
+			return (ft_putstr_fd("Error\n", 2), lst_clear(&a), free(p), NULL);
 		nb = ft_aatoi(av[i]);
 		if (nb > 2147483647 || nb < -2147483648)
-			return (ft_putstr_fd("Error\n", 2), lst_clear(&first_a), NULL);
-		add_back(&first_a, new_node(nb));
+			return (ft_putstr_fd("Error\n", 2), lst_clear(&a), free(p), NULL);
+		add_back(&a, new_node(nb));
 		i++;
 	}
-	piles->pile_a = first_a;
-	piles->pile_b = first_b;
-	return (piles);
+	p->pile_a = a;
+	p->pile_b = b;
+	return (p);
 }

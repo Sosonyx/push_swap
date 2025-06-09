@@ -6,7 +6,7 @@
 /*   By: ihadj <ihadj@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/07 14:45:39 by ihadj             #+#    #+#             */
-/*   Updated: 2025/06/07 15:05:53 by ihadj            ###   ########.fr       */
+/*   Updated: 2025/06/09 15:06:26 by ihadj            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,5 @@ int			apply_instruction(t_piles *p, char *line);
 int			is_sorted(t_node *lst);
 int			lst_size(t_node *lst_a);
 int			ft_strcmp(char *s1, char *s2);
-
 
 #endif
