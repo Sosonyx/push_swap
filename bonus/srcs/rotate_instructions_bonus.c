@@ -1,18 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate_instructions3.c                             :+:      :+:    :+:   */
+/*   rotate_instructions_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ihadj <ihadj@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/26 17:16:34 by ihadj             #+#    #+#             */
-/*   Updated: 2025/06/17 18:05:20 by ihadj            ###   ########.fr       */
+/*   Created: 2025/05/26 18:09:30 by ihadj             #+#    #+#             */
+/*   Updated: 2025/06/22 19:01:57 by ihadj            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
-void	rra_rrr(t_node **lst_a)
+void	ra(t_node **lst_a)
+{
+	t_node	*tmp;
+
+	if (!*lst_a || !(*lst_a)->next)
+		return ;
+	tmp = *lst_a;
+	*lst_a = (*lst_a)->next;
+	add_back(lst_a, tmp);
+	tmp->next = NULL;
+}
+
+void	rb(t_node **lst_b)
+{
+	t_node	*tmp;
+
+	if (!*lst_b || !(*lst_b)->next)
+		return ;
+	tmp = *lst_b;
+	*lst_b = (*lst_b)->next;
+	add_back(lst_b, tmp);
+	tmp->next = NULL;
+}
+
+void	rra(t_node **lst_a)
 {
 	t_node	*tmp;
 	t_node	*last;
@@ -29,7 +53,7 @@ void	rra_rrr(t_node **lst_a)
 	new_last->next = NULL;
 }
 
-void	rrb_rrr(t_node **lst_b)
+void	rrb(t_node **lst_b)
 {
 	t_node	*tmp;
 	t_node	*last;
@@ -44,11 +68,4 @@ void	rrb_rrr(t_node **lst_b)
 	last->next = tmp;
 	*lst_b = last;
 	new_last->next = NULL;
-}
-
-void	rrr(t_piles *piles)
-{
-	rra_rrr(&(piles->pile_a));
-	rrb_rrr(&(piles->pile_b));
-	write(1, "rrr\n", 4);
 }

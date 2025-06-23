@@ -6,7 +6,7 @@
 /*   By: ihadj <ihadj@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/20 12:00:59 by ihadj             #+#    #+#             */
-/*   Updated: 2025/06/06 16:46:53 by ihadj            ###   ########.fr       */
+/*   Updated: 2025/06/23 11:41:44 by ihadj            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,5 +88,7 @@ void		rotate_case_1(t_piles *p, int rot_a, int rot_b);
 void		rotate_case_2(t_piles *p, int rot_a, int rot_b);
 void		rotate_case_3(t_piles *p, int rot_a, int rot_b);
 void		sort_algo(t_piles *p, int size);
+
+int			is_sorted_checker(t_node *lst);
 
 #endif

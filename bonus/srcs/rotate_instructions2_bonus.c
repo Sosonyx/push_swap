@@ -1,37 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_instructions.c                                :+:      :+:    :+:   */
+/*   rotate_instructions2_bonus.c                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ihadj <ihadj@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/26 17:17:10 by ihadj             #+#    #+#             */
-/*   Updated: 2025/06/22 18:41:42 by ihadj            ###   ########.fr       */
+/*   Created: 2025/05/26 17:19:44 by ihadj             #+#    #+#             */
+/*   Updated: 2025/06/22 19:02:04 by ihadj            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
-void	pb(t_node **lst_b, t_node **lst_a)
+void	ra_rr(t_node **lst_a)
 {
 	t_node	*tmp;
 
-	if (!*lst_a)
+	if (!*lst_a || !(*lst_a)->next)
 		return ;
-	tmp = (*lst_a);
-	(*lst_a) = (*lst_a)->next;
-	add_front(lst_b, tmp);
-	write(1, "pb\n", 3);
+	tmp = *lst_a;
+	*lst_a = (*lst_a)->next;
+	add_back(lst_a, tmp);
+	tmp->next = NULL;
 }
 
-void	pa(t_node **lst_a, t_node **lst_b)
+void	rb_rr(t_node **lst_b)
 {
 	t_node	*tmp;
 
-	if (!*lst_b)
+	if (!*lst_b || !(*lst_b)->next)
 		return ;
-	tmp = (*lst_b);
-	(*lst_b) = (*lst_b)->next;
-	add_front(lst_a, tmp);
-	write(1, "pa\n", 3);
+	tmp = *lst_b;
+	*lst_b = (*lst_b)->next;
+	add_back(lst_b, tmp);
+	tmp->next = NULL;
+}
+
+void	rr(t_piles *piles)
+{
+	ra_rr(&piles->pile_a);
+	rb_rr(&piles->pile_b);
 }

@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap_instructions.c                                :+:      :+:    :+:   */
+/*   swap_instructions_bonus.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ihadj <ihadj@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 17:11:52 by ihadj             #+#    #+#             */
-/*   Updated: 2025/06/17 18:05:39 by ihadj            ###   ########.fr       */
+/*   Updated: 2025/06/22 19:02:23 by ihadj            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
 void	sa(t_node **lst)
 {
@@ -24,7 +24,6 @@ void	sa(t_node **lst)
 	first->next = second->next;
 	second->next = first;
 	*lst = second;
-	write(1, "sa\n", 3);
 }
 
 void	sb(t_node **lst)
@@ -39,12 +38,10 @@ void	sb(t_node **lst)
 	first->next = second->next;
 	second->next = first;
 	*lst = second;
-	write(1, "sb\n", 3);
 }
 
 void	ss(t_piles *piles)
 {
 	sa(&(piles->pile_a));
 	sb(&(piles->pile_b));
-	write(1, "ss\n", 3);
 }

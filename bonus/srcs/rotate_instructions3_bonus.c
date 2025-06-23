@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate_instructions3.c                             :+:      :+:    :+:   */
+/*   rotate_instructions3_bonus.c                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ihadj <ihadj@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 17:16:34 by ihadj             #+#    #+#             */
-/*   Updated: 2025/06/17 18:05:20 by ihadj            ###   ########.fr       */
+/*   Updated: 2025/06/22 19:02:13 by ihadj            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
 void	rra_rrr(t_node **lst_a)
 {
@@ -50,5 +50,4 @@ void	rrr(t_piles *piles)
 {
 	rra_rrr(&(piles->pile_a));
 	rrb_rrr(&(piles->pile_b));
-	write(1, "rrr\n", 4);
 }

@@ -6,7 +6,7 @@
 /*   By: ihadj <ihadj@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/07 14:31:28 by ihadj             #+#    #+#             */
-/*   Updated: 2025/06/07 15:06:14 by ihadj            ###   ########.fr       */
+/*   Updated: 2025/06/23 11:43:04 by ihadj            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,30 @@ int	ft_strcmp(char *s1, char *s2)
 		s2++;
 	}
 	return (*s1 - *s2);
+}
+
+t_node	*find_last(t_node *lst)
+{
+	t_node	*last;
+
+	if (!lst)
+		return (0);
+	last = lst;
+	while (last->next)
+		last = last->next;
+	return (last);
+}
+
+t_node	*find_before_last(t_node *lst)
+{
+	t_node	*last;
+
+	if (!lst)
+		return (0);
+	last = lst;
+	while (last->next->next)
+		last = last->next;
+	return (last);
 }
 
 int	apply_instruction(t_piles *p, char *line)
