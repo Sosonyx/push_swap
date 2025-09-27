@@ -30,6 +30,13 @@
 ## Objectif
 
 Écrire un programme qui trie une liste d’entiers passée en argument, en utilisant uniquement les instructions `push`, `swap`, `rotate` et `reverse rotate` sur deux piles, tout en optimisant le nombre total d’opérations réalisées.
+Ce projet implémente un **algorithme glouton pour trier des piles**.  
+L’idée est de déplacer les éléments entre deux piles (`A` et `B`) de manière à minimiser le nombre total d’opérations :
+
+- `sa`, `sb` : swap  
+- `pa`, `pb` : push  
+- `ra`, `rb` : rotate  
+- `rra`, `rrb` : reverse rotate  
 
 ---
 
@@ -45,25 +52,10 @@ Le checker vérifie si les instructions trient la pile correctement et affiche O
 - Gestion des instructions : `sa`, `sb`, `pa`, `pb`, `ra`, `rb`, `rra`, `rrb` implémentées pour manipuler les piles.  
 
 ---
-# Push_swap – Algorithme glouton de tri
-
-![Push_swap](https://img.shields.io/badge/42-Push_swap-blue)
-
-## Description
-
-Ce projet implémente un **algorithme glouton pour trier des piles**.  
-L’idée est de déplacer les éléments entre deux piles (`A` et `B`) de manière à minimiser le nombre total d’opérations :
-
-- `sa`, `sb` : swap  
-- `pa`, `pb` : push  
-- `ra`, `rb` : rotate  
-- `rra`, `rrb` : reverse rotate  
-
-L’algorithme choisit **à chaque étape l’élément dont le coût total pour être replacé est minimal**, afin d’optimiser le nombre d’opérations globales.
-
----
 
 ## Principe de l’algorithme utilisé
+
+L’algorithme choisit **à chaque étape l’élément dont le coût total pour être replacé est minimal**, afin d’optimiser le nombre d’opérations globales.
 
 1. **Calculer le coût pour chaque élément de B**
    - `cost_b` : rotations nécessaires pour amener l’élément en haut de B
