@@ -1,17 +1,38 @@
-# push_swap
+<a name="readme-top"></a>
+<div align="center">
+  <h1>Push_Swap Project</h1>
 
-Projet 42 – trier une pile d’entiers en utilisant un nombre minimal d’instructions sur deux piles.
+  <p align="center">
+    Projet 42 – trier une pile d’entiers en utilisant un nombre minimal d’instructions sur deux piles.
+  </p>
+
+  <p>
+    <img src="https://img.shields.io/github/repo-size/ton-repo/push_swap?style=for-the-badge&logo=github">
+    <img src="https://img.shields.io/github/languages/count/ton-repo/push_swap?style=for-the-badge" />
+    <img src="https://img.shields.io/github/languages/top/ton-repo/push_swap?style=for-the-badge" />
+    <img src="https://img.shields.io/github/last-commit/ton-repo/push_swap?style=for-the-badge" />
+  </p>
+
+  <div style="font-size:1.3em; line-height:2;">
+    <span><a href="#usage" style="text-decoration:none; color:inherit;">👨‍💻 Usage</a></span>
+    &nbsp;&bull;&nbsp;
+    <span><a href="#objectif" style="text-decoration:none; color:inherit;">✨ Objectif</a></span>
+    &nbsp;&bull;&nbsp;
+    <span><a href="#fonctions-principales" style="text-decoration:none; color:inherit;">⚙️ Fonctions principales</a></span>
+    &nbsp;&bull;&nbsp;
+    <span><a href="#connaissances-acquises" style="text-decoration:none; color:inherit;">📚 Connaissances acquises</a></span>
+  </div>
+</div>
 
 ---
 
-## Comment utiliser
+## <a name="usage"></a>👨‍💻 Comment utiliser
 
-- **Compiler** le programme :  
-  ```bash
-  make
-      ./push_swap 3 2 1 6 5
-  make bonus
-      ./push_swap 3 2 1 6 5 | ./checker 3 2 1 6 5
+**Compiler le programme :**
+
+```bash
+make
+./push_swap 3 2 1 6 5
 
 ## Objectif
 
