@@ -1,16 +1,16 @@
 <a name="readme-top"></a>
 <div align="center">
-  <h1>Push_Swap Project</h1>
+  <h1>Push Swap Project</h1>
 
   <p align="center">
     Projet 42 – trier une pile d’entiers en utilisant un nombre minimal d’instructions sur deux piles.
   </p>
 
   <p>
-    <img src="https://img.shields.io/github/repo-size/Sosonyx/PUSHSWAP?style=for-the-badge&logo=github">
-    <img src="https://img.shields.io/github/languages/count/Sosonyx/PUSHSWAP?style=for-the-badge" />
-    <img src="https://img.shields.io/github/languages/top/Sosonyx/PUSHSWAP?style=for-the-badge" />
-    <img src="https://img.shields.io/github/last-commit/Sosonyx/PUSHSWAP?style=for-the-badge" />
+    <img src="https://img.shields.io/github/repo-size/Sosonyx/push_swap?style=for-the-badge&logo=github">
+    <img src="https://img.shields.io/github/languages/count/Sosonyx/push_swap?style=for-the-badge" />
+    <img src="https://img.shields.io/github/languages/top/Sosonyx/push_swap?style=for-the-badge" />
+    <img src="https://img.shields.io/github/last-commit/Sosonyx/push_swap?style=for-the-badge" />
 
   </p>
 
