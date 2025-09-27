@@ -15,35 +15,18 @@
   </p>
 
   <div style="font-size:1.3em; line-height:2;">
-    <span><a href="#usage" style="text-decoration:none; color:inherit;">👨‍💻 Usage</a></span>
-    &nbsp;&bull;&nbsp;
     <span><a href="#objectif" style="text-decoration:none; color:inherit;">✨ Objectif</a></span>
     &nbsp;&bull;&nbsp;
     <span><a href="#fonctions-principales" style="text-decoration:none; color:inherit;">⚙️ Fonctions principales</a></span>
     &nbsp;&bull;&nbsp;
     <span><a href="#connaissances-acquises" style="text-decoration:none; color:inherit;">📚 Connaissances acquises</a></span>
+    <span><a href="#usage" style="text-decoration:none; color:inherit;">👨‍💻 Usage</a></span>
+    &nbsp;&bull;&nbsp;
   </div>
 </div>
 
 ---
 
-## <a name="usage"></a>👨‍💻 Usage
-
-**Compiler le programme :**
-
-```bash
-make
-./push_swap 3 2 1 6 5
-```
-
-## <a name="usage"></a>👨‍💻 Comment utiliser
-
-**Compiler le programme :**
-
-```bash
-make
-./push_swap 3 2 1 6 5
-```
 ## Objectif
 
 Écrire un programme qui trie une liste d’entiers passée en argument, en utilisant uniquement les instructions `push`, `swap`, `rotate` et `reverse rotate` sur deux piles, tout en optimisant le nombre total d’opérations réalisées.
@@ -77,3 +60,12 @@ Le checker vérifie si les instructions triées la pile correctement et affiche 
 >- Approche algorithmique claire avec découpage fonctionnel.
 
 ---
+
+## <a name="usage"></a>👨‍💻 Usage
+
+**Compiler le programme :**
+
+```bash
+make
+./push_swap 3 2 1 6 5
+```
