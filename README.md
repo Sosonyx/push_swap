@@ -7,10 +7,10 @@
   </p>
 
   <p>
-    <img src="https://img.shields.io/github/repo-size/ton-repo/push_swap?style=for-the-badge&logo=github">
-    <img src="https://img.shields.io/github/languages/count/ton-repo/push_swap?style=for-the-badge" />
-    <img src="https://img.shields.io/github/languages/top/ton-repo/push_swap?style=for-the-badge" />
-    <img src="https://img.shields.io/github/last-commit/ton-repo/push_swap?style=for-the-badge" />
+    <img src="https://img.shields.io/github/repo-size/ton-repo/PUSHSWAP?style=for-the-badge&logo=github">
+    <img src="https://img.shields.io/github/languages/count/ton-repo/PUSHSWAP?style=for-the-badge" />
+    <img src="https://img.shields.io/github/languages/top/ton-repo/PUSHSWAPp?style=for-the-badge" />
+    <img src="https://img.shields.io/github/last-commit/ton-repo/PUSHSWAP?style=for-the-badge" />
   </p>
 
   <div style="font-size:1.3em; line-height:2;">
@@ -25,6 +25,15 @@
 </div>
 
 ---
+
+## <a name="usage"></a>👨‍💻 Usage
+
+**Compiler le programme :**
+
+```bash
+make
+./push_swap 3 2 1 6 5
+
 
 ## <a name="usage"></a>👨‍💻 Comment utiliser
 
