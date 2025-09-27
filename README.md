@@ -68,4 +68,14 @@ Le checker vérifie si les instructions trient la pile correctement et affiche O
 ```bash
 make
 ./push_swap 3 2 1 6 5
+rra
+rra
+rra
+pb
+rra
+pb
+sa
+rra
+pa
+pa
 ```
