@@ -66,12 +66,14 @@ Le checker vérifie si les instructions triées la pile correctement et affiche 
 
 ## Connaissances acquises
 
-- Manipulation de listes chaînées (piles) et gestion dynamique mémoire.  
-- Parsing d’arguments en ligne de commande avec validation.  
-- Programmation modulaire avec séparation du code en plusieurs fichiers `.c`.  
-- Conception et implémentation d’un algorithme glouton optimisé pour réduire le nombre d’instructions.  
-- Gestion des opérations bas niveau sur piles (push, swap, rotate, reverse rotate).  
-- Calcul des coûts pour optimiser les déplacements dans les piles.  
-- Utilisation d’un Makefile pour gérer compilation et linking.  
-- Respect strict des normes 42.  
-- Approche algorithmique claire avec découpage fonctionnel.
+>- Manipulation de listes chaînées (piles) et gestion dynamique mémoire.  
+>- Parsing d’arguments en ligne de commande avec validation.  
+>- Programmation modulaire avec séparation du code en plusieurs fichiers `.c`.  
+>- Conception et implémentation d’un algorithme glouton optimisé pour réduire le nombre d’instructions.  
+>- Gestion des opérations bas niveau sur piles (push, swap, rotate, reverse rotate).  
+>- Calcul des coûts pour optimiser les déplacements dans les piles.  
+>- Utilisation d’un Makefile pour gérer compilation et linking.  
+>- Respect strict des normes 42.  
+>- Approche algorithmique claire avec découpage fonctionnel.
+
+---
