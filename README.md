@@ -3,11 +3,6 @@
 Projet 42 – trier une pile d’entiers en utilisant un nombre minimal d’instructions sur deux piles.
 
 ---
-# push_swap
-
-Projet 42 – trier une pile d’entiers en utilisant un nombre minimal d’instructions sur deux piles.
-
----
 
 ## Comment utiliser
 
