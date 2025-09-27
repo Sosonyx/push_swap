@@ -20,8 +20,8 @@
     <span><a href="#fonctions-principales" style="text-decoration:none; color:inherit;">⚙️ Fonctions principales</a></span>
     &nbsp;&bull;&nbsp;
     <span><a href="#connaissances-acquises" style="text-decoration:none; color:inherit;">📚 Connaissances acquises</a></span>
-    <span><a href="#usage" style="text-decoration:none; color:inherit;">👨‍💻 Usage</a></span>
     &nbsp;&bull;&nbsp;
+    <span><a href="#usage" style="text-decoration:none; color:inherit;">👨‍💻 Usage</a></span>
   </div>
 </div>
 
