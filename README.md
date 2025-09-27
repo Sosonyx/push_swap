@@ -7,10 +7,11 @@
   </p>
 
   <p>
-    <img src="https://img.shields.io/github/repo-size/ton-repo/PUSHSWAP?style=for-the-badge&logo=github">
-    <img src="https://img.shields.io/github/languages/count/ton-repo/PUSHSWAP?style=for-the-badge" />
-    <img src="https://img.shields.io/github/languages/top/ton-repo/PUSHSWAPp?style=for-the-badge" />
-    <img src="https://img.shields.io/github/last-commit/ton-repo/PUSHSWAP?style=for-the-badge" />
+    <img src="https://img.shields.io/github/repo-size/Sosonyx/PUSHSWAP?style=for-the-badge&logo=github">
+    <img src="https://img.shields.io/github/languages/count/Sosonyx/PUSHSWAP?style=for-the-badge" />
+    <img src="https://img.shields.io/github/languages/top/Sosonyx/PUSHSWAP?style=for-the-badge" />
+    <img src="https://img.shields.io/github/last-commit/Sosonyx/PUSHSWAP?style=for-the-badge" />
+
   </p>
 
   <div style="font-size:1.3em; line-height:2;">
@@ -33,7 +34,7 @@
 ```bash
 make
 ./push_swap 3 2 1 6 5
-
+```
 
 ## <a name="usage"></a>👨‍💻 Comment utiliser
 
@@ -42,7 +43,7 @@ make
 ```bash
 make
 ./push_swap 3 2 1 6 5
-
+```
 ## Objectif
 
 Écrire un programme qui trie une liste d’entiers passée en argument, en utilisant uniquement les instructions `push`, `swap`, `rotate` et `reverse rotate` sur deux piles, tout en optimisant le nombre total d’opérations réalisées.
@@ -60,10 +61,6 @@ Le checker vérifie si les instructions triées la pile correctement et affiche 
   - `sort_5(t_node **lst_a, t_node **lst_b)` pour trier jusqu’à 5 éléments.  
 - Gestion des instructions : `sa`, `sb`, `pa`, `pb`, `ra`, `rb`, `rra`, `rrb` implémentées pour manipuler les piles.  
 - Algorithme glouton qui sélectionne à chaque étape l’élément dont le coût total de déplacement est minimal (coût calculé selon sa position dans les piles), et effectue les opérations optimales pour le replacer.
-
----
-
-
 
 ---
 
