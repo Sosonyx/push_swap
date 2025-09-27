@@ -43,7 +43,44 @@ Le checker vérifie si les instructions trient la pile correctement et affiche O
   - `sort_3(t_node **lst_a)` pour trier efficacement 3 éléments.  
   - `sort_5(t_node **lst_a, t_node **lst_b)` pour trier jusqu’à 5 éléments.  
 - Gestion des instructions : `sa`, `sb`, `pa`, `pb`, `ra`, `rb`, `rra`, `rrb` implémentées pour manipuler les piles.  
-- Algorithme glouton qui sélectionne à chaque étape l’élément dont le coût total de déplacement est minimal (coût calculé selon sa position dans les piles), et effectue les opérations optimales pour le replacer.
+
+---
+# Push_swap – Algorithme glouton de tri
+
+![Push_swap](https://img.shields.io/badge/42-Push_swap-blue)
+
+## Description
+
+Ce projet implémente un **algorithme glouton pour trier des piles**.  
+L’idée est de déplacer les éléments entre deux piles (`A` et `B`) de manière à minimiser le nombre total d’opérations :
+
+- `sa`, `sb` : swap  
+- `pa`, `pb` : push  
+- `ra`, `rb` : rotate  
+- `rra`, `rrb` : reverse rotate  
+
+L’algorithme choisit **à chaque étape l’élément dont le coût total pour être replacé est minimal**, afin d’optimiser le nombre d’opérations globales.
+
+---
+
+## Principe de l’algorithme utilisé
+
+1. **Calculer le coût pour chaque élément de B**
+   - `cost_b` : rotations nécessaires pour amener l’élément en haut de B
+   - `cost_a` : rotations nécessaires pour insérer l’élément dans sa position correcte dans A
+   - `cost_total` = `abs(cost_a) + abs(cost_b)` (ou `max(abs(cost_a), abs(cost_b))` si rotations combinables)
+
+2. **Sélectionner l’élément le plus économique**
+   - On choisit l’élément avec le **coût minimal** à chaque étape (décision gloutonne)
+
+3. **Effectuer les opérations**
+   - Si `cost_a` et `cost_b` ont le même signe → combiner les rotations (`ra + rb` ou `rra + rrb`)  
+   - Sinon → effectuer les rotations séparément (`ra`/`rra` puis `rb`/`rrb`)  
+   - Pousser l’élément de B vers A (`pa`)
+
+4. **Répéter jusqu’à ce que B soit vide**
+   - À la fin, A contient tous les éléments triés
+   - Optionnel : rotations finales pour amener le plus petit élément en haut de A
 
 ---
 
