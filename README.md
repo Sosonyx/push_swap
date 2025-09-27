@@ -78,4 +78,7 @@ sa
 rra
 pa
 pa
+
+./push_swap 3 2 1 6 5 | ./checker 3 2 1 6 5
+OK
 ```
