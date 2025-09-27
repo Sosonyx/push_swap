@@ -45,7 +45,7 @@ Le checker vérifie si les instructions trient la pile correctement et affiche O
 
 - `main(int argc, char **argv)` : parse les arguments, initialise la pile principale et lance l’algorithme de tri.  
 - Parsing sécurisé et validation des arguments (entiers valides, pas de doublons).  
-- `algo(t_node **lst_a, t_node **lst_b)` : fonction principale qui applique une stratégie gloutonne (greedy) pour trier la pile.  
+- `algo(t_node **lst_a, t_node **lst_b)` : fonction principale qui applique un **greedy sort** pour trier la pile.  
 - Fonctions spécifiques de tri :  
   - `sort_3(t_node **lst_a)` pour trier efficacement 3 éléments.  
   - `sort_5(t_node **lst_a, t_node **lst_b)` pour trier jusqu’à 5 éléments.  
@@ -55,24 +55,24 @@ Le checker vérifie si les instructions trient la pile correctement et affiche O
 
 ## Principe de l’algorithme utilisé
 
-L’algorithme choisit **à chaque étape l’élément dont le coût total pour être replacé est minimal**, afin d’optimiser le nombre d’opérations globales.
-
-1. **Calculer le coût pour chaque élément de B**
-   - `cost_b` : rotations nécessaires pour amener l’élément en haut de B
-   - `cost_a` : rotations nécessaires pour insérer l’élément dans sa position correcte dans A
-   - `cost_total` = `abs(cost_a) + abs(cost_b)` (ou `max(abs(cost_a), abs(cost_b))` si rotations combinables)
+1. **Calculer le coût pour chaque élément de A à déplacer dans B**
+   - Pour chaque élément restant dans A :
+     - `cost_a` : rotations nécessaires pour l’amener en haut de A
+     - `cost_b` : rotations nécessaires pour sa future insertion correcte dans B
+     - `cost_total` = `abs(cost_a) + abs(cost_b)` (ou `max(abs(cost_a), abs(cost_b))` si rotations combinables)
 
 2. **Sélectionner l’élément le plus économique**
-   - On choisit l’élément avec le **coût minimal** à chaque étape (décision gloutonne)
+   - Choisir l’élément avec le **coût minimal** et le pousser dans B (`pb`)
 
-3. **Effectuer les opérations**
-   - Si `cost_a` et `cost_b` ont le même signe → combiner les rotations (`ra + rb` ou `rra + rrb`)  
-   - Sinon → effectuer les rotations séparément (`ra`/`rra` puis `rb`/`rrb`)  
-   - Pousser l’élément de B vers A (`pa`)
+3. **Répéter jusqu’à ce que tous les éléments nécessaires soient dans B**
+   - À chaque étape, recalculer les coûts pour les éléments restants
 
-4. **Répéter jusqu’à ce que B soit vide**
-   - À la fin, A contient tous les éléments triés
-   - Optionnel : rotations finales pour amener le plus petit élément en haut de A
+4. **Réinsérer les éléments de B dans A**
+   - Calculer à nouveau `cost_a` et `cost_b` pour chaque élément de B  
+   - Choisir l’élément avec coût minimal, effectuer rotations combinées si possible, puis `pa` pour le remettre dans A
+
+5. **Finalisation**
+   - Une fois B vide, effectuer éventuellement les rotations finales sur A pour amener le plus petit élément en haut
 
 ---
 
