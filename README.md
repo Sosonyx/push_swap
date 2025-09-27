@@ -33,7 +33,7 @@
 
 ---
 
-Le checker vérifie si les instructions triées la pile correctement et affiche OK ou KO.
+Le checker vérifie si les instructions trient la pile correctement et affiche OK ou KO.
 ## Fonctions principales
 
 - `main(int argc, char **argv)` : parse les arguments, initialise la pile principale et lance l’algorithme de tri.  
