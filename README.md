@@ -74,6 +74,15 @@ Le checker vérifie si les instructions trient la pile correctement et affiche O
 5. **Finalisation**
    - Une fois B vide, effectuer éventuellement les rotations finales sur A pour amener le plus petit élément en haut
 
+## Performance
+
+L’algorithme glouton montre de bonnes performances même sur des listes relativement grandes :
+
+- Pour **500 nombres**, le nombre moyen d’opérations est d’environ **4 900**  
+- Pour **100 nombres**, le nombre moyen d’opérations est inférieur à **600**
+
+Ces résultats montrent que la stratégie gloutonne, bien que locale, réduit significativement le nombre d’opérations par rapport à un tri naïf ou aléatoire.
+
 ---
 
 ## Connaissances acquises
